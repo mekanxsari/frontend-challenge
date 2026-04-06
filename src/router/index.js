@@ -1,15 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../views/HomePage.vue'
-import LikedPage from '../views/LikedPage.vue'
-
-const routes = [
-  { path: '/', component: HomePage },
-  { path: '/liked', component: LikedPage }
-]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+  history: createWebHistory('/frontend-challenge/'),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: () => import('@/views/HomePage.vue')
+    },
+    {
+      path: '/liked',
+      name: 'liked',
+      component: () => import('@/views/LikedPage.vue')
+    }
+  ]
 })
 
 export default router
