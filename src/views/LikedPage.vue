@@ -3,7 +3,7 @@
         ... загружаем котиков ...
     </div>
     
-    <div v-else>
+    <div class="cat-wrapper" v-else>
         <ul class="cats-list">
             <li v-for="(cat, index) in cats" :key="cat.id">
                 <img :src="cat.image">
